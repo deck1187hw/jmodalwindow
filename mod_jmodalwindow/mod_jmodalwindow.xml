@@ -28,19 +28,57 @@
 					name="url"
 					type="text"
 					label="URL to load"
-					description="" />			
-				<field
-					name="cache"
-					type="list"
+                    size="50"
+					description="" />
+                <field
+                        name="width"
+                        type="text"
+                        default="750"
+                        label="Modal width (in pixels)"
+                        size="5"
+                        description="" />
+                <field
+                        name="height"
+                        type="text"
+                        default="600"
+                        label="Modal height (in pixels)"
+                        size="5"
+                        description="" />
+                <field
+                        name="cookietime"
+                        type="text"
+                        default="1"
+                        label="Cookie time (days)"
+                        description="" />
+                <field
+                        name="cookiename"
+                        type="text"
+                        default="jmodalwindow"
+                        label="Cookie name"
+                        description="" />
+                <field
+					name="scrollbars"
+					type="radio"
 					default="1"
-					label="Load jQuery"
+					label="Show scrollbar"
 					description="">
 					<option
 						value="1">Yes</option>
 					<option
 						value="0">No</option>
 				</field>
-				
+                <field
+                        name="conflict_load"
+                        type="radio"
+                        default="1"
+                        label="jQuery Conflict"
+                        description="">
+                    <option
+                            value="1">Yes</option>
+                    <option
+                            value="0">No</option>
+                </field>
+
 			</fieldset>
 			<fieldset
 				name="advanced">

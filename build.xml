@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Neon" basedir="." default="copyFiles">
+
+
+    <property name="site_modules" value="../../../rtvn_june_2013/modules/mod_jmodalwindow/" override="true" />
+
+    <property name="dev_package" value="dist/" override="true" />
+    <property name="dev_comp" value="./com_neon/" override="true" />
+    <property name="dev_modules" value="./modules/" override="true" />
+
+
+
+    <target name="copyFilesModules" description="Copying module files to the development installation of Joomla">
+
+        <patternset id="exc_files">
+            <exclude name="**/.svn/**" />
+            <exclude name="**/.git/**" />
+            <exclude name="**/.DS_Store/**" />
+        </patternset>
+
+        <echo>Copying module to: ${site_modules}</echo>
+        <copy todir="${site_modules}">
+            <fileset dir="./mod_jmodalwindow/">
+                <patternset refid="exc_files" />
+            </fileset>
+        </copy>
+
+
+    </target>
+
+
+
+
+    <target name="packFiles" description="Packing files for deployment">
+        <echo>Deploying...</echo>
+        <delete file="dist/mod_jmodalwindow.zip" />
+        <zip destfile="dist/mod_jmodalwindow.zip">
+            <fileset dir="./mod_jmodalwindow/">
+            </fileset>
+        </zip>
+
+
+
+    </target>
+
+
+</project>
